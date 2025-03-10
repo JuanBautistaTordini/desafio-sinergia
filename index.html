@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Metas Mensuales</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a5f',
+                        secondary: '#6c757d',
+                        accent: '#2c7873',
+                        light: '#f8f9fa',
+                        dark: '#212529',
+                        header: '#000000',
+                        row1: '#d3d3d3',
+                        row2: '#a9a9a9',
+                        row3: '#484848'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-6 max-w-md md:max-w-2xl">
+        <!-- Cabecera con logo -->
+        <header class="mb-6 bg-white rounded-lg shadow-md p-4 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-primary">Asistente de Metas Mensuales</h1>
+            <img src="assets/img/hero.png" alt="Asistente" class="w-24 h-24">
+        </header>
+
+        <!-- Información del socio - Tarjeta -->
+        <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+            <h2 class="text-lg font-semibold text-primary border-b pb-2 mb-3">Información Personal</h2>
+            
+            <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="font-medium">Nombre de Socio/a:</div>
+                <div class="text-right">Socio A</div>
+                
+                <div class="font-medium">Mes:</div>
+                <div class="text-right">Febrero</div>
+                
+                <div class="font-medium">Mi Ticket Promedio:</div>
+                <div class="text-right">850 USD</div>
+                
+                <div class="font-medium">Valor USD:</div>
+                <div class="text-right">1055</div>
+            </div>
+            
+            <div class="mb-3">
+                <label class="block text-sm font-medium mb-2">Nivel Actual</label>
+                <select class="w-full p-2 border rounded bg-row3 text-white">
+                    <option selected>10%</option>
+                    <option>15%</option>
+                    <option>20%</option>
+                    <option>35%</option>
+                    <option>40%</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Ganancia Neta Actual -->
+        <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+            <h2 class="text-lg font-semibold text-primary border-b pb-2 mb-3">Tu Ganancia Neta Hoy</h2>
+            <div class="text-center">
+                <span class="text-3xl font-bold text-primary">$826</span>
+            </div>
+        </div>
+
+        <!-- Productos - Sección colapsable -->
+        <div class="bg-white rounded-lg shadow-md mb-4">
+            <button class="w-full p-4 text-left font-semibold text-primary flex justify-between items-center" onclick="toggleCollapsible('productos')">
+                <span>Productos Disponibles</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" id="productos-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="collapsible-content" id="productos-content">
+                <div class="p-4 bg-gray-50">
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto A</div>
+                            <div>10000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto B</div>
+                            <div>20000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto C</div>
+                            <div>30000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto D</div>
+                            <div>40000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto E</div>
+                            <div>50000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto F</div>
+                            <div>60000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto G</div>
+                            <div>70000</div>
+                        </div>
+                        <div class="bg-row2 p-2 rounded text-center">
+                            <div class="font-medium">Producto H</div>
+                            <div>80000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ganancia por Comisión -->
+        <div class="bg-white rounded-lg shadow-md mb-4">
+            <button class="w-full p-4 text-left font-semibold text-primary flex justify-between items-center" onclick="toggleCollapsible('comisiones')">
+                <span>Ganancia Liquidación Neta</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" id="comisiones-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="collapsible-content" id="comisiones-content">
+                <div class="p-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-row1 p-3 rounded text-center">
+                            <div class="font-medium mb-1">Comisión al 10%</div>
+                            <div class="text-lg font-bold">$826</div>
+                        </div>
+                        <div class="bg-row1 p-3 rounded text-center">
+                            <div class="font-medium mb-1">Comisión al 15%</div>
+                            <div class="text-lg font-bold">$1.240</div>
+                        </div>
+                        <div class="bg-row1 p-3 rounded text-center">
+                            <div class="font-medium mb-1">Comisión al 20%</div>
+                            <div class="text-lg font-bold">$1.653</div>
+                        </div>
+                        <div class="bg-row1 p-3 rounded text-center">
+                            <div class="font-medium mb-1">Comisión al 35%</div>
+                            <div class="text-lg font-bold">$2.893</div>
+                        </div>
+                        <div class="bg-row1 p-3 rounded text-center col-span-2">
+                            <div class="font-medium mb-1">Comisión al 40%</div>
+                            <div class="text-lg font-bold">$4.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulador de Venta -->
+        <div class="bg-white rounded-lg shadow-md mb-4">
+            <button class="w-full p-4 text-left font-semibold text-primary flex justify-between items-center" onclick="toggleCollapsible('simulador')">
+                <span>Simulador de Venta Personal</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" id="simulador-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div class="collapsible-content" id="simulador-content">
+                <div class="p-4">
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium mb-2">Seleccione un Ticket de Venta como ejemplo</label>
+                        <select class="w-full p-2 border rounded bg-primary text-white">
+                            <option selected>Producto A</option>
+                            <option>Producto B</option>
+                            <option>Producto C</option>
+                            <option>Producto D</option>
+                        </select>
+                    </div>
+                    
+                    <div class="bg-row1 p-3 rounded mb-3">
+                        <div class="text-center mb-2">Valor: 10000</div>
+                        <div class="grid grid-cols-5 gap-1 text-xs text-center">
+                            <div>0.3</div>
+                            <div>0.35</div>
+                            <div>0.5</div>
+                            <div>0.5</div>
+                            <div>0.5</div>
+                        </div>
+                        <div class="text-xs text-center mt-1">Tasas de Cierre (Variables de configuración)</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">10%</div>
+                            <div>$826</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">15%</div>
+                            <div>$1.240</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">20%</div>
+                            <div>$1.653</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">35%</div>
+                            <div>$2.893</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center col-span-2">
+                            <div class="font-medium mb-1">40%</div>
+                            <div>$4.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="bg-white rounded-lg shadow-md mb-4">
+            <div class="bg-header text-white p-4 rounded-t-lg">
+                <h2 class="text-lg font-bold text-center">OBJETIVO</h2>
+                <p class="text-center text-sm">¿Cuanto quiero Ganar este mes en mi Venta personal?</p>
+            </div>
+            <div class="p-4">
+                <div class="text-center mb-4">
+                    <span class="text-3xl font-bold">$200.000</span>
+                </div>
+                
+                <div class="mb-4">
+                    <h3 class="font-medium mb-2">Tengo que Vender</h3>
+                    <div class="grid grid-cols-2 gap-2 text-sm mb-2">
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">10%</div>
+                            <div>$2.420.000</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">15%</div>
+                            <div>$1.597.200</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">20%</div>
+                            <div>$1.210.000</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">35%</div>
+                            <div>$689.700</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">40%</div>
+                            <div>$435.600</div>
+                        </div>
+                    </div>
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
+                        Total = $2.420.000
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h3 class="font-medium mb-2">Me sumará un Volumen en carrera de</h3>
+                    <div class="grid grid-cols-2 gap-2 text-sm mb-2">
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">10%</div>
+                            <div>2.294usd</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">15%</div>
+                            <div>1.514usd</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">20%</div>
+                            <div>1.147usd</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">35%</div>
+                            <div>654usd</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div class="font-medium mb-1">40%</div>
+                            <div>413usd</div>
+                        </div>
+                    </div>
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
+                        Total = 2.294usd
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-medium mb-2">Total de Ventas en el Mes</h3>
+                    <div class="grid grid-cols-2 gap-2 text-sm mb-2">
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div>2,7</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div>1,8</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div>1,3</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div>0,8</div>
+                        </div>
+                        <div class="bg-row1 p-2 rounded text-center">
+                            <div>0,5</div>
+                        </div>
+                    </div>
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
+                        Total = 3
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan de acción -->
+        <div class="bg-white rounded-lg shadow-md mb-4">
+            <div class="p-4 border-b">
+                <div class="flex justify-center my-3">
+                    <img src="assets/img/target.jpg" alt="Target" class="h-20">
+                </div>
+                <h2 class="text-xl font-bold text-primary text-center">TU PLAN DE ACCIÓN desde HOY</h2>
+                <div class="text-center">9/03/25</div>
+            </div>
+            
+            <div class="p-4">
+                <div class="mb-4">
+                    <h3 class="font-medium mb-2">Nuevos Datos a Prospectar</h3>
+                    <div class="bg-row1 p-3 rounded text-center font-bold text-xl">16</div>
+                </div>
+                
+                <div class="mb-4">
+                    <h3 class="font-medium mb-2">Mínimo Presentaciones x Mes</h3>
+                    <div class="grid grid-cols-3 gap-2 text-sm mb-2">
+                        <div class="p-2 border rounded text-center">9</div>
+                        <div class="p-2 border rounded text-center">5</div>
+                        <div class="p-2 border rounded text-center">3</div>
+                        <div class="p-2 border rounded text-center">2</div>
+                        <div class="p-2 border rounded text-center">1</div>
+                        <div class="p-2 border rounded text-center font-bold">Total = 9</div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <h3 class="font-medium mb-2">Mínimo Presentaciones x Sem.</h3>
+                    <div class="grid grid-cols-3 gap-2 text-sm mb-2">
+                        <div class="p-2 border rounded text-center">0,4</div>
+                        <div class="p-2 border rounded text-center">0,2</div>
+                        <div class="p-2 border rounded text-center">0,1</div>
+                        <div class="p-2 border rounded text-center">0,1</div>
+                        <div class="p-2 border rounded text-center">0,0</div>
+                        <div class="p-2 border rounded text-center font-bold">Total =  3</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex items-center mb-2">
+                        <img src="assets/img/capacitacion.jpg" alt="Training" class="mr-2 h-8 w-8">
+                        <h3 class="font-medium">Capacitación Mínima Sugerida entre Campus Virtual y Oficina</h3>
+                    </div>
+                    <div class="bg-row1 p-3 rounded text-center font-bold">20Hs semanales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="mb-4">
+            <div class="w-full border-t-2 border-gray-300 py-2 text-center text-xs text-gray-500">
+                Versión Maqueta: Sinergia Creativa
+            </div>
+            <div class="flex justify-between mt-16">
+                <div class="border-t border-black pt-2 w-5/12 text-center text-sm">Firma Supervisor</div>
+                <div class="border-t border-black pt-2 w-5/12 text-center text-sm">Firma emprendedor</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
