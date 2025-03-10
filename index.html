@@ -34,33 +34,36 @@
             <img src="assets/img/hero.png" alt="Asistente" class="w-24 h-24">
         </header>
 
-        <!-- Información del socio - Tarjeta -->
+        <!-- Información Personal -->
         <div class="bg-white rounded-lg shadow-md p-4 mb-4">
             <h2 class="text-lg font-semibold text-primary border-b pb-2 mb-3">Información Personal</h2>
-            
             <div class="grid grid-cols-2 gap-2 mb-3">
                 <div class="font-medium">Nombre de Socio/a:</div>
-                <div class="text-right">Socio A</div>
-                
+                <div class="text-right">
+                    <input type="text" id="nombreSocio" class="w-full p-1 border rounded text-right" value="Socio A">
+                </div>
                 <div class="font-medium">Mes:</div>
-                <div class="text-right">Febrero</div>
-                
-                <div class="font-medium">Mi Ticket Promedio:</div>
-                <div class="text-right">850 USD</div>
-                
-                <div class="font-medium">Valor USD:</div>
-                <div class="text-right">1055</div>
+                <div class="text-right">
+                    <input type="text" id="mesActual" class="w-full p-1 border rounded text-right" value="Febrero">
+                </div>
             </div>
-            
             <div class="mb-3">
                 <label class="block text-sm font-medium mb-2">Nivel Actual</label>
-                <select class="w-full p-2 border rounded bg-row3 text-white">
-                    <option selected>10%</option>
-                    <option>15%</option>
-                    <option>20%</option>
-                    <option>35%</option>
-                    <option>40%</option>
+                <select id="nivelActual" class="w-full p-2 border rounded bg-row3 text-white">
+                    <option value="10%" selected>10%</option>
+                    <option value="15%">15%</option>
+                    <option value="20%">20%</option>
+                    <option value="35%">35%</option>
+                    <option value="40%">40%</option>
                 </select>
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium mb-2">Mi Ticket Promedio en USD</label>
+                <input type="number" id="ticketPromedio" class="w-full p-2 border rounded" placeholder="Ingrese el ticket promedio en USD">
+            </div>
+            <div class="mb-3">
+                <label class="block text-sm font-medium mb-2">Valor USD</label>
+                <input type="number" id="valorUSD" class="w-full p-2 border rounded" placeholder="Ingrese el valor del USD">
             </div>
         </div>
 
@@ -68,91 +71,7 @@
         <div class="bg-white rounded-lg shadow-md p-4 mb-4">
             <h2 class="text-lg font-semibold text-primary border-b pb-2 mb-3">Tu Ganancia Neta Hoy</h2>
             <div class="text-center">
-                <span class="text-3xl font-bold text-primary">$826</span>
-            </div>
-        </div>
-
-        <!-- Productos - Sección colapsable -->
-        <div class="bg-white rounded-lg shadow-md mb-4">
-            <button class="w-full p-4 text-left font-semibold text-primary flex justify-between items-center" onclick="toggleCollapsible('productos')">
-                <span>Productos Disponibles</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" id="productos-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <div class="collapsible-content" id="productos-content">
-                <div class="p-4 bg-gray-50">
-                    <div class="grid grid-cols-2 gap-2 text-sm">
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto A</div>
-                            <div>10000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto B</div>
-                            <div>20000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto C</div>
-                            <div>30000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto D</div>
-                            <div>40000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto E</div>
-                            <div>50000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto F</div>
-                            <div>60000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto G</div>
-                            <div>70000</div>
-                        </div>
-                        <div class="bg-row2 p-2 rounded text-center">
-                            <div class="font-medium">Producto H</div>
-                            <div>80000</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ganancia por Comisión -->
-        <div class="bg-white rounded-lg shadow-md mb-4">
-            <button class="w-full p-4 text-left font-semibold text-primary flex justify-between items-center" onclick="toggleCollapsible('comisiones')">
-                <span>Ganancia Liquidación Neta</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform" id="comisiones-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
-            <div class="collapsible-content" id="comisiones-content">
-                <div class="p-4">
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div class="bg-row1 p-3 rounded text-center">
-                            <div class="font-medium mb-1">Comisión al 10%</div>
-                            <div class="text-lg font-bold">$826</div>
-                        </div>
-                        <div class="bg-row1 p-3 rounded text-center">
-                            <div class="font-medium mb-1">Comisión al 15%</div>
-                            <div class="text-lg font-bold">$1.240</div>
-                        </div>
-                        <div class="bg-row1 p-3 rounded text-center">
-                            <div class="font-medium mb-1">Comisión al 20%</div>
-                            <div class="text-lg font-bold">$1.653</div>
-                        </div>
-                        <div class="bg-row1 p-3 rounded text-center">
-                            <div class="font-medium mb-1">Comisión al 35%</div>
-                            <div class="text-lg font-bold">$2.893</div>
-                        </div>
-                        <div class="bg-row1 p-3 rounded text-center col-span-2">
-                            <div class="font-medium mb-1">Comisión al 40%</div>
-                            <div class="text-lg font-bold">$4.000</div>
-                        </div>
-                    </div>
-                </div>
+                <span id="gananciaNeta" class="text-3xl font-bold text-primary"></span>
             </div>
         </div>
 
@@ -168,46 +87,38 @@
                 <div class="p-4">
                     <div class="mb-4">
                         <label class="block text-sm font-medium mb-2">Seleccione un Ticket de Venta como ejemplo</label>
-                        <select class="w-full p-2 border rounded bg-primary text-white">
-                            <option selected>Producto A</option>
-                            <option>Producto B</option>
-                            <option>Producto C</option>
-                            <option>Producto D</option>
+                        <select id="productoSimulador" class="w-full p-2 border rounded bg-primary text-white">
+                            <option value="Producto A" selected>Producto A</option>
+                            <option value="Producto B">Producto B</option>
+                            <option value="Producto C">Producto C</option>
+                            <option value="Producto D">Producto D</option>
+                            <option value="Producto E">Producto E</option>
+                            <option value="Producto F">Producto F</option>
+                            <option value="Producto G">Producto G</option>
+                            <option value="Producto H">Producto H</option>
                         </select>
                     </div>
-                    
-                    <div class="bg-row1 p-3 rounded mb-3">
-                        <div class="text-center mb-2">Valor: 10000</div>
-                        <div class="grid grid-cols-5 gap-1 text-xs text-center">
-                            <div>0.3</div>
-                            <div>0.35</div>
-                            <div>0.5</div>
-                            <div>0.5</div>
-                            <div>0.5</div>
-                        </div>
-                        <div class="text-xs text-center mt-1">Tasas de Cierre (Variables de configuración)</div>
-                    </div>
-                    
+                    <div id="valorProductoSimulador" class="text-center mb-2"></div>
                     <div class="grid grid-cols-2 gap-2 text-sm">
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">10%</div>
-                            <div>$826</div>
+                            <div id="comision10"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">15%</div>
-                            <div>$1.240</div>
+                            <div id="comision15"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">20%</div>
-                            <div>$1.653</div>
+                            <div id="comision20"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">35%</div>
-                            <div>$2.893</div>
+                            <div id="comision35"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center col-span-2">
                             <div class="font-medium mb-1">40%</div>
-                            <div>$4.000</div>
+                            <div id="comision40"></div>
                         </div>
                     </div>
                 </div>
@@ -218,11 +129,12 @@
         <div class="bg-white rounded-lg shadow-md mb-4">
             <div class="bg-header text-white p-4 rounded-t-lg">
                 <h2 class="text-lg font-bold text-center">OBJETIVO</h2>
-                <p class="text-center text-sm">¿Cuanto quiero Ganar este mes en mi Venta personal?</p>
+                <p class="text-center text-sm">¿Cuánto quiero Ganar este mes en mi Venta personal?</p>
             </div>
             <div class="p-4">
                 <div class="text-center mb-4">
-                    <span class="text-3xl font-bold">$200.000</span>
+                    <label class="block text-sm font-medium mb-2">Ingrese su objetivo</label>
+                    <input type="number" id="objetivo" class="w-1/2 p-2 border rounded mx-auto" placeholder="Ingrese su objetivo">
                 </div>
                 
                 <div class="mb-4">
@@ -230,27 +142,27 @@
                     <div class="grid grid-cols-2 gap-2 text-sm mb-2">
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">10%</div>
-                            <div>$2.420.000</div>
+                            <div id="ventasNecesarias10"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">15%</div>
-                            <div>$1.597.200</div>
+                            <div id="ventasNecesarias15"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">20%</div>
-                            <div>$1.210.000</div>
+                            <div id="ventasNecesarias20"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">35%</div>
-                            <div>$689.700</div>
+                            <div id="ventasNecesarias35"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">40%</div>
-                            <div>$435.600</div>
+                            <div id="ventasNecesarias40"></div>
                         </div>
                     </div>
-                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
-                        Total = $2.420.000
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold total-destacado" id="ventasNecesariasTotal">
+                        Total para el nivel actual (<span id="nivelActualTexto">10%</span>) = <span id="ventasNecesarias"></span>
                     </div>
                 </div>
                 
@@ -259,27 +171,27 @@
                     <div class="grid grid-cols-2 gap-2 text-sm mb-2">
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">10%</div>
-                            <div>2.294usd</div>
+                            <div id="volumenCarrera10"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">15%</div>
-                            <div>1.514usd</div>
+                            <div id="volumenCarrera15"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">20%</div>
-                            <div>1.147usd</div>
+                            <div id="volumenCarrera20"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">35%</div>
-                            <div>654usd</div>
+                            <div id="volumenCarrera35"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
                             <div class="font-medium mb-1">40%</div>
-                            <div>413usd</div>
+                            <div id="volumenCarrera40"></div>
                         </div>
                     </div>
-                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
-                        Total = 2.294usd
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold total-destacado" id="volumenCarreraTotal">
+                        Total para el nivel actual (<span id="nivelActualTextoVolumen">10%</span>) = <span id="volumenCarrera"></span>
                     </div>
                 </div>
                 
@@ -287,23 +199,23 @@
                     <h3 class="font-medium mb-2">Total de Ventas en el Mes</h3>
                     <div class="grid grid-cols-2 gap-2 text-sm mb-2">
                         <div class="bg-row1 p-2 rounded text-center">
-                            <div>2,7</div>
+                            <div id="totalVentas10"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
-                            <div>1,8</div>
+                            <div id="totalVentas15"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
-                            <div>1,3</div>
+                            <div id="totalVentas20"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
-                            <div>0,8</div>
+                            <div id="totalVentas35"></div>
                         </div>
                         <div class="bg-row1 p-2 rounded text-center">
-                            <div>0,5</div>
+                            <div id="totalVentas40"></div>
                         </div>
                     </div>
-                    <div class="bg-primary text-white p-2 rounded text-center font-bold">
-                        Total = 3
+                    <div class="bg-primary text-white p-2 rounded text-center font-bold total-destacado" id="totalVentasTotal">
+                        Total para el nivel actual (<span id="nivelActualTextoVentas">10%</span>) = <span id="totalVentas"></span>
                     </div>
                 </div>
             </div>
@@ -316,63 +228,56 @@
                     <img src="assets/img/target.jpg" alt="Target" class="h-20">
                 </div>
                 <h2 class="text-xl font-bold text-primary text-center">TU PLAN DE ACCIÓN desde HOY</h2>
-                <div class="text-center">9/03/25</div>
+                <div class="text-center" id="fechaActual">9/03/25</div>
             </div>
-            
             <div class="p-4">
                 <div class="mb-4">
                     <h3 class="font-medium mb-2">Nuevos Datos a Prospectar</h3>
-                    <div class="bg-row1 p-3 rounded text-center font-bold text-xl">16</div>
+                    <div id="nuevosDatos" class="bg-row1 p-3 rounded text-center font-bold text-xl"></div>
                 </div>
-                
                 <div class="mb-4">
                     <h3 class="font-medium mb-2">Mínimo Presentaciones x Mes</h3>
                     <div class="grid grid-cols-3 gap-2 text-sm mb-2">
-                        <div class="p-2 border rounded text-center">9</div>
-                        <div class="p-2 border rounded text-center">5</div>
-                        <div class="p-2 border rounded text-center">3</div>
-                        <div class="p-2 border rounded text-center">2</div>
-                        <div class="p-2 border rounded text-center">1</div>
-                        <div class="p-2 border rounded text-center font-bold">Total = 9</div>
+                        <div id="presentacionesMes10" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesMes15" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesMes20" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesMes35" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesMes40" class="p-2 border rounded text-center"></div>
+                        <div class="p-2 border rounded text-center font-bold">
+                            Elegible = <span id="presentacionesMes"></span>
+                        </div>
                     </div>
                 </div>
-                
                 <div class="mb-4">
                     <h3 class="font-medium mb-2">Mínimo Presentaciones x Sem.</h3>
                     <div class="grid grid-cols-3 gap-2 text-sm mb-2">
-                        <div class="p-2 border rounded text-center">0,4</div>
-                        <div class="p-2 border rounded text-center">0,2</div>
-                        <div class="p-2 border rounded text-center">0,1</div>
-                        <div class="p-2 border rounded text-center">0,1</div>
-                        <div class="p-2 border rounded text-center">0,0</div>
-                        <div class="p-2 border rounded text-center font-bold">Total =  3</div>
+                        <div id="presentacionesSemana10" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesSemana15" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesSemana20" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesSemana35" class="p-2 border rounded text-center"></div>
+                        <div id="presentacionesSemana40" class="p-2 border rounded text-center"></div>
+                        <div class="p-2 border rounded text-center font-bold">
+                            Elegible = <span id="presentacionesSemana"></span>
+                        </div>
                     </div>
-                </div>
-                
-                <div>
-                    <div class="flex items-center mb-2">
-                        <img src="assets/img/capacitacion.jpg" alt="Training" class="mr-2 h-8 w-8">
-                        <h3 class="font-medium">Capacitación Mínima Sugerida entre Campus Virtual y Oficina</h3>
-                    </div>
-                    <div class="bg-row1 p-3 rounded text-center font-bold">20Hs semanales</div>
                 </div>
             </div>
         </div>
 
-        <!-- Pie de página -->
-        <div class="mb-4">
-            <div class="w-full border-t-2 border-gray-300 py-2 text-center text-xs text-gray-500">
-                Versión Maqueta: Sinergia Creativa
-            </div>
-            <div class="flex justify-between mt-16">
-                <div class="border-t border-black pt-2 w-5/12 text-center text-sm">Firma Supervisor</div>
-                <div class="border-t border-black pt-2 w-5/12 text-center text-sm">Firma emprendedor</div>
-            </div>
+        <!-- Botón de descarga PDF -->
+        <div class="bg-white rounded-lg shadow-md p-4 mb-4 text-center">
+            <button id="descargarPDF" class="bg-accent hover:bg-primary text-white font-bold py-2 px-4 rounded transition-colors duration-300 flex items-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Descargar Resumen PDF
+            </button>
         </div>
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/script.js"></script>
 </body>
 </html>
-
